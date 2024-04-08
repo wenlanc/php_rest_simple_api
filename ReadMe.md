@@ -14,8 +14,10 @@
       password: 'Data2004@@'
 
     Output
-      `id`: 1
-      `token`: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImlzcyI6Imp3dC5sb2NhbCIsImF1ZCI6InRva2VuQHdlc3RvcmUuZ2UifQ.eyJpZCI6IjEiLCJpZG51bWJlciI6IjQwNTMzMjY3MCIsImlzcyI6Imp3dC5sb2NhbCIsImF1ZCI6InRva2VuQHdlc3RvcmUuZ2UiLCJleHAiOjE3MTI1ODkzMTN9.q8RvbOWCGeb26HqQT1LyKG0qWl0tHKMWX2_mWaEFLjc'
+      {
+        `id`: 1
+        `token`: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImlzcyI6Imp3dC5sb2NhbCIsImF1ZCI6InRva2VuQHdlc3RvcmUuZ2UifQ.eyJpZCI6IjEiLCJpZG51bWJlciI6IjQwNTMzMjY3MCIsImlzcyI6Imp3dC5sb2NhbCIsImF1ZCI6InRva2VuQHdlc3RvcmUuZ2UiLCJleHAiOjE3MTI1ODkzMTN9.q8RvbOWCGeb26HqQT1LyKG0qWl0tHKMWX2_mWaEFLjc'
+      }
 
 
 # Register the User
@@ -34,8 +36,10 @@
       ....
 
     Output
-      `id`: 20
-      `token`: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImlzcyI6Imp3dC5sb2NhbCIsImF1ZCI6InRva2VuQHdlc3RvcmUuZ2UifQ.eyJpZCI6IjEiLCJpZG51bWJlciI6IjQwNTMzMjY3MCIsImlzcyI6Imp3dC5sb2NhbCIsImF1ZCI6InRva2VuQHdlc3RvcmUuZ2UiLCJleHAiOjE3MTI1ODkzMTN9.q8RvbOWCGeb26HqQT1LyKG0qWl0tHKMWX2_mWaEFLjc'
+      {
+        `id`: 20
+        `token`: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImlzcyI6Imp3dC5sb2NhbCIsImF1ZCI6InRva2VuQHdlc3RvcmUuZ2UifQ.eyJpZCI6IjEiLCJpZG51bWJlciI6IjQwNTMzMjY3MCIsImlzcyI6Imp3dC5sb2NhbCIsImF1ZCI6InRva2VuQHdlc3RvcmUuZ2UiLCJleHAiOjE3MTI1ODkzMTN9.q8RvbOWCGeb26HqQT1LyKG0qWl0tHKMWX2_mWaEFLjc'
+      }
 
 
 # Get the list of cities
@@ -177,10 +181,12 @@
 
   example:
     Input
-      `id`: 1
-      `fullname`: 'fullname'
-      `city`: 'city address'
-      ....
+      {
+        `id`: 1
+        `fullname`: 'fullname'
+        `city`: 'city address'
+        ....
+      }
 
     Output
-      "Order added successfully!"
+      ["success" => "Order added successfully!"]

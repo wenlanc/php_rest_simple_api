@@ -47,7 +47,7 @@
             
           $orderItems = new OrderItems();
           for ($i = 0; $i < count($names); $i++) {
-            $orderItems->insert($id, $order_id, $quantities[$i], $numbers[$i], $names[$i]);
+            $orderItems->insert($user_id, $order_id, $quantities[$i], $numbers[$i], $names[$i]);
           }
           return array("result" => "Order added successfully!");
         } catch (Exception $e) {

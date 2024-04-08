@@ -14,9 +14,10 @@ class ShippingType
     public $name;
     public $color;
 
-    public function __construct($db)
+    public function __construct()
     {
-        $this->conn = $db;
+        global $conn;
+        $this->conn = $conn;
     }
 
     public function readAll(){

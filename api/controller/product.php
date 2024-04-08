@@ -13,9 +13,8 @@
             }
 
             if ($this->method == 'GET') {
-                global $conn;
                 $user_id = $_GET['user_id'];
-                $model = new Product($conn);
+                $model = new Product();
                 $result = $model->read($user_id);
                 return $result;
             }

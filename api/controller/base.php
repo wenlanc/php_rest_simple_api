@@ -103,6 +103,11 @@
             return true;
         }
 
+        public function generateToken($payload){
+            $jwt = new JWT();
+            return $jwt->generate($payload);
+        }
+
         private function _response($data, $status = 200) {
             header("HTTP/1.1 " . $status . " " . $this->_requestStatus($status));
             return json_encode($data);

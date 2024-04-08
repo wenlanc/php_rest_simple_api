@@ -1,7 +1,7 @@
 ## WeStore API List ##
 
-# Authorize the User
-  url: `https://wesotre.ge/api/v1/auth`
+# Login the User
+  url: `https://wesotre.ge/api/v1/login`
   method: POST
   input parameter:
     `idnumber`, `password`

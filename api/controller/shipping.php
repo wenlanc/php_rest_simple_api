@@ -6,8 +6,7 @@
   {
     public function shippingtypes(){
       if ($this->method == 'GET') {
-        global $conn;
-        $model = new ShippingType($conn);
+        $model = new ShippingType();
         $result = $model->readAll();
         return $result;
       }

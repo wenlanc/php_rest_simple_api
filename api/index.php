@@ -9,6 +9,7 @@
         $_SERVER['HTTP_ORIGIN'] = $_SERVER['SERVER_NAME'];
     }
 
+    require_once "utils/db.php";
     require_once "utils/route.php";
 
     try {
@@ -16,7 +17,7 @@
 
         $strArray = explode('/', $request);
         switch($strArray[1]) {
-            case 'auth':
+            case 'login':
             case 'register':
                 $API = new UserController($request);
                 echo $API->processAPI();

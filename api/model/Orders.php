@@ -27,9 +27,10 @@ class Orders
     public $weight = 1;
     public $comment;
 
-    public function __construct($db)
+    public function __construct()
     {
-        $this->conn = $db;
+        global $conn;
+        $this->conn = $conn;
     }
 
     public function insert($status, $company_id, $fullname, $city, $address, $phone, $phone2, $amount,

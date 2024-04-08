@@ -17,9 +17,10 @@ class Product
     public $name;
 
     //Constructor with db conn
-    public function __construct($db)
+    public function __construct()
     {
-        $this->conn = $db;
+        global $conn;
+        $this->conn = $conn;
     }
 
     public function read($user_id){

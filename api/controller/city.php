@@ -11,8 +11,7 @@
      */
     public function cities(){
       if($this->method == 'GET') {
-        global $conn;
-        $model = new Cities($conn);
+        $model = new Cities();
         $result = $model->readAll();
         return $result;
       }

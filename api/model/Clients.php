@@ -21,9 +21,10 @@ class Clients
     public $finances;
     public $edit_product_name;
 
-    public function __construct($db)
+    public function __construct()
     {
-        $this->conn = $db;
+        global $conn;
+        $this->conn = $conn;
     }
 
     public function insert($status, $company, $email, $phone, $idnumber, $password, $finances, $edit_product_name){
@@ -60,16 +61,16 @@ class Clients
         $query = "SELECT id, password FROM ". $this->table_name . " WHERE idnumber = ?";
 
         $stmt = $this->conn->prepare($query);
-        $this->idnumber = $idnumber;
-        $stmt->bind_Param('s', $this->idnumber);
+        $stmt->bind_Param('s', $idnumber);
 
         //execute query
         if($stmt->execute()){
             $result = $stmt->get_result();
-            $row = $result->fetch_assoc();
-            return $row;
+            if ($result->num_rows > 0) {
+                $row = $result->fetch_assoc();
+                return $row;
+            }
         }
-
         return -1;
     }
 

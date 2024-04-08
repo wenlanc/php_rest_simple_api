@@ -17,9 +17,10 @@ class OrderItems
     public $number;
     public $name;
 
-    public function __construct($db)
+    public function __construct()
     {
-        $this->conn = $db;
+        global $conn;
+        $this->conn = $conn;
     }
 
     public function insert($company_id, $order_id, $quantity, $number, $name){

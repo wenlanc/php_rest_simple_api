@@ -97,7 +97,7 @@
             if(!$jwt->is_valid($token)){
                 return false;
             }
-            if(isset($_GET['user_id']) && $jwt->is_valid($token) != $_GET['user_id']){
+            if(isset($_GET['user_id']) && $jwt->is_valid($token) != $_REQUEST['user_id']){
                 return false;
             }
             return true;

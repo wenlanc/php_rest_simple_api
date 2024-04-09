@@ -33,7 +33,19 @@ class Quantity
         return $res;
     }
 
+    public function readOneWithNumber($number){
+        $query = "SELECT * FROM ". $this->table_name ." WHERE number='".$number."'";
+        $result = mysqli_query($this->conn, $query);
+        $row = mysqli_fetch_assoc($result);
+        if(empty($row))
+            return false;
+        return true;
+    }
+
     public function update($number, $quantity){
+        if(!$this->readOneWithNumber($number)){
+            return false;
+        }
         $query = "UPDATE quantity SET qty = qty - '$quantity' WHERE number = '".$number."'";
         $result = mysqli_query($this->conn, $query);
         return $result;

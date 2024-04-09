@@ -30,10 +30,13 @@
           $weight = empty($_POST['weight']) ? 1 :$_POST['weight'];
           $comment = $_POST['comment'];
 
-          $numbers = $_POST['numbers'];
-          $names = $_POST['names'];
-          $quantities = $_POST['quantities'];
+          $numbers = json_decode($_POST['numbers']);
+          $names = json_decode($_POST['names']);
+          $quantities = json_decode($_POST['quantities']);
 
+          if('array' != gettype($numbers) || 'array' != gettype($names) || 'array' != gettype($quantities)){
+            return array("error" => "Product informations must be array!");
+          }
           $quantityModel = new Quantity();
           foreach($quantities as $index => $quantity){
             $quantityModel->update($numbers[$index], $quantity);
